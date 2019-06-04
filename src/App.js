@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './component/Navbar';
-import { HashRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Landing from './component/Landing';
 import Wrapper from './component/Wrapper';
 import Aboutme from './component/Aboutme';
@@ -12,7 +12,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/theportfolio">
     <div id="top" className="App">
       <Navbar />
       <Wrapper>
