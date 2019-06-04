@@ -12,7 +12,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 function App() {
   return (
-    <Router basename='/theportfolio'>
+    <Router>
     <div id="top" className="App">
       <Navbar />
       <Wrapper>

@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pkennedytx1.github.io/theportfolio",
+  "homepage": "https://pkennedytx1.com",
   "dependencies": {
     "animate.css": "^3.7.1",
     "materialize-css": "^1.0.0-rc.2",
