@@ -1,0 +1,20 @@
+.landing {
+    background-color: #1e88e5;
+    color: white;
+    min-height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    padding: 150px 0 0 0;
+}
+
+.buttons {
+    margin: 30px;
+}
+
+hr {
+    max-width: 575px;
+}
+
+nav {
+    
+}

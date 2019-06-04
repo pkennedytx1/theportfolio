@@ -1,0 +1,20 @@
+.title {
+    color: #1e88e5;
+    text-align: center;
+}
+
+.underline {
+    color: #1e88e5;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.resume-header{
+    text-align: center;
+}
+
+.resume-body{
+    max-width: 860px;
+    margin: 30px auto 30px auto;
+    padding: 20px;
+}

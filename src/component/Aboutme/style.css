@@ -1,0 +1,13 @@
+hr {
+    max-width: 860px;
+    color: #1e88e5;
+}
+
+#aboutmelink {
+    margin: 10px;
+    transition: ease 0.2s;
+}
+
+#aboutmelink:hover {
+    color: rgba(255, 83, 31, 0.712);
+}
