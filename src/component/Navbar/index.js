@@ -35,7 +35,7 @@ class Navbar extends Component {
         <div>
             <nav className="z-depth-0">
                 <div className="nav-wrapper blue darken-1">
-                <Link style={{ padding: "0 0 0 15px" }}className="brand-logo" to="/"><b>Patrick Kennedy</b></Link>
+                <Link style={{ padding: "0 0 0 15px" }} className="brand-logo" to="/"><b><span className="flow-text">Patrick Kennedy</span></b></Link>
                 <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                 <ul className="right hide-on-med-and-down">
                     <li><Link to="/resume"><b>Resume</b></Link></li>
@@ -47,19 +47,19 @@ class Navbar extends Component {
             </nav>
 
             <ul className="sidenav" id="mobile-demo">
-                <li><Link to="/resume">Resume</Link></li>
-                <li><Link to="/aboutme">About Me</Link></li>
-                <li><Link to="/portfolio">Portfolio</Link></li>
-                <li><a href='#!' onClick={() => this.openModal()}>Contact Me</a></li>
+                <li><Link class="sidenav-close" to="/resume">Resume</Link></li>
+                <li><Link class="sidenav-close" to="/aboutme">About Me</Link></li>
+                <li><Link class="sidenav-close" to="/portfolio">Portfolio</Link></li>
+                <li><a class="sidenav-close" href='#!' onClick={() => this.openModal()}>Contact Me</a></li>
             </ul>
 
             <Modal visible={this.state.visible} width="400" height="300" effect="fadeInDown" onClickAway={() => this.closeModal()}>
               <div style={{position: 'relative', margin: '50px 30px 0 30px'}}>
-                <h1 className='blue-text'><b>REACH</b>ME</h1>
+                <h1 style={{fontSize: '50px'}} className='blue-text'><b>CONTACT</b>ME</h1>
                 <div style={{width: '30%'}}>
                   <hr/>
                 </div>
-                <h5 className='blue-text'><b><i><i style={{verticalAlign: 'middle'}} className="small material-icons">send</i> pkennedytx1@gmail.com</i></b></h5>
+                <h5 className='blue-text'><b><i>pkennedytx1@gmail.com</i></b></h5>
                 <a rel="noopener noreferrer" href="https://www.linkedin.com/in/patrick-kennedy-262198170/" target="_blank" ><h5 className='blue-text' ><b>Linked</b><i className="fab fa-linkedin"></i></h5></a>
                 <button className='blue-text' style={{position: 'absolute', top: '-35px', right: '-10px', border: 'none', cursor: 'pointer'}} href={null} onClick={() => this.closeModal()}>Close</button>
               </div>

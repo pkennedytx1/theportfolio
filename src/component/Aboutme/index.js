@@ -16,13 +16,11 @@ function Aboutme() {
 
                         <b style={{color: "#1e88e5"}}>Im, Pat.</b><br></br><br></br>
 
-                        <b>I’m a Full Stack Web Developer living in Austin, TX. With a background in Molecular Biology,
-                        I have exposure to complex concepts and logical reasoning as well as having a large aptitude 
-                        for learning and discovering new things. I can work efficiently in a team setting and power 
-                        through long term individual work. I can bring diverse reasoning, team support, and a hard 
-                        working positive attitude towards hard problems and difficult situations. I am currently 
-                        looking for a full-time or contract position as a Jr. Full Stack Web Developer or a similar 
-                        position. I would love to show you who I am and what I can offer a development team.
+                        <b>We all start somewhere. For me, my interest in software development started when I was a Molecular Biology major at Texas A&M University studying genomics. I almost failed the class mainly because I chose to spend my time learning how to code in Python rather than do the very structured and boring coursework that was required. This should have been my first indication that perhaps I was pursuing the wrong career. 
+                        <br /><br />
+                        Once I graduated I realized the Medical School was not what I wanted for my life and I realized that I wanted to become a Software Engineer. After sometime at a Bootcamp I discovered just how complicated, full-filling, and diverse the tech industry is. I spent my time building full stack and serverless applications while discovering new technologies to add to my repertoire. My curiosity and hunger to learn goes deeper than just the code. Discovering new ways to work better as a team, improve efficiency, and maintain a great community are all things I believe are crucial to meeting deadlines and making amazing products. 
+                        <br /><br />
+                        I am looking for an opportunity to grow my skills and add value to team as Junior Level Software Engineer. I am super excited to be a part of this industry and I am excited for what lies ahead.   
                         </b></p><br></br>
                     </div>
                 </div>
