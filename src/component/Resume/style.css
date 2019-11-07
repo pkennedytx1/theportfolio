@@ -18,3 +18,13 @@
     margin: 30px auto 30px auto;
     padding: 20px;
 }
+
+canvas {
+    margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    #pdfViewer {
+        display: none;
+    }
+}

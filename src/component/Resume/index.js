@@ -1,54 +1,60 @@
-import React from 'react';
 import './style.css';
+import React from 'react';
+import { Document, Page, pdfjs } from 'react-pdf'
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
-function Resume() {
-    return(
+class Resume extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            numPages: null,
+            pageNumber: 1
+        }
+    }
+
+    onDocumentLoadSuccess = ({ numPages }) => {
+        this.setState({ numPages })
+    }
+
+    handlePageTurn = () => {
+        let pageDirection
+        if (this.state.pageNumber === 1) {
+            pageDirection = 2
+        } else {
+            pageDirection = 1
+        }
+        this.setState({ pageNumber: pageDirection })
+    }
+
+    render() {
+        const { pageNumber, numPages } = this.state
+        const pdfPath = '/images/patrickkennedyresumev2.pdf'
+
+        return(
         <div>
             <h1 className="title"><b>Resume</b></h1>
-            <h5 className="title"><a style={{textDecoration: 'none'}} href="/images/Patrick_Kennedy_Resume.pdf" download><i className="fas fa-download"></i> Download</a></h5>
-            <div className="resume-header">
-                <p>
-                <br></br><br></br><br></br><span style={{color: "#1e88e5", fontWeight: "bold", fontSize: "28px"}}>Patrick Kennedy</span><br></br><br></br>
-                    Austin, TX 78751<br></br>
-                    214-864-6061 | pkennedytx1@gmail.com | pkennedytx1.com<br></br><br></br>
-                </p>
+            <h5 className="title"><a style={{textDecoration: 'none'}} href="/images/patrickkennedyresumev2.pdf" download><i className="fas fa-download"></i> Download</a></h5>
+            <br />
+            <div style={{textAlign: 'center'}} >
+                <a href={pdfPath} rel="noopener noreferrer" target="_blank" className="waves-effect waves-light btn  blue darken-1">Open PDF In A New Tab</a>
             </div>
-            <div className="resume-body">
-                <span className="underline">Professional Summary</span><br></br><br></br>
-                Dedicated and hardworking full stack web developer seeking an entry-level or Jr. level position
-                with a background in customer service, industrious problem solving, and a strong work ethic.
-                Able to focus for long periods of time as well digest complex material and constantly seek
-                resources to refine work flow as well as explain complex information to a variety of audiences.<br></br><br></br>
-                <span className="underline">Technologies and Languages</span><br></br><br></br>
-                HTML5/HTML, CSS3/CSS, Bootstrop, JavaScript, React, jQuery, MySQL, Google Firebase, Node.js,
-                Express, Git Version Control, MongoDB, Redux, GraphQL, Materialize<br></br><br></br>
-                <span className="underline">Education</span><br></br><br></br>
-                Texas A&M University - College Station, TX<br></br>
-                BS, Molecular and Cell Biology (2018)<br></br><br></br>
-                University of Texas - Austin, TX<br></br>
-                Full Stack Development Coding Bootcamp (2019)<br></br><br></br>
-                <span className="underline">Experience</span><br></br><br></br>
-                360 Uno
-                Barista - (2018-19)<br></br>
-                Experience debugging printer malfunctions in multiple parts of the restaurant as well as using
-                and optimizing the restaurant POS.<br></br><br></br>
-                Academic Success Center<br></br>
-                Student Instructor - (2015-18)<br></br>
-                Leadership experience by running large group tutoring sessions. Gained skills in teaching
-                complex material as well as optimizing massive amounts of material to be digested in a small
-                amount of time in the most efficient way possible.<br></br><br></br>
-                Vincent Lopez Serafino Jenivein P.C.<br></br>
-                Office Assistant - (2014 - 17)<br></br>
-                Managed and organized massive amounts of legal data as well as creating a guide to the
-                physical database. Scanned and organized large amounts of accounting data and created a
-                usable guide to store data in the future.<br></br><br></br>
-                <span className="underline">Certificates</span><br></br><br></br>
-                Eagle Scout (2014)<br/>
-                Boot Camp Certificate (2019)
+            <div id='pdfViewer'>
+            <Document
+                style={{wdith: '100%'}}
+                file={pdfPath}
+                onLoadSuccess={this.onDocumentLoadSuccess}
+            >
+                <br /><br /><br />
+                <Page pageNumber={pageNumber} width={this.props.wrapperDivSize}/>
+                <div style={{textAlign: 'center'}}>
+                <button onClick={this.handlePageTurn} class="waves-effect waves-light btn  blue darken-1">{pageNumber === 1 ? 'Next Page' : 'Previous Page'}</button>
+                <p style={{textAlign: 'center'}} >Page {pageNumber} of {numPages}</p>
+                </div>
+            </Document>
             </div>
-            <p style={{ textAlign: "center", margin: "0 0 100px 0"}}><a href="#top">Back to Top</a></p>
         </div>
-    )
+        )
+    }
 }
 
 export default Resume;
